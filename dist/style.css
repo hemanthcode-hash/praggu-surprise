@@ -261,3 +261,22 @@ body[data-screen="final-gift"] header,body[data-screen="final-gift"] footer{disp
 .photo-gallery .gallery-video>video{border:9px solid #fffdf7;padding:0;border-radius:14px;box-shadow:0 15px 35px #61354625}
 @media(max-width:760px){.photo-gallery{padding:20px 16px 0;gap:50px}.photo-gallery figure:not(.gallery-video)::before,.photo-gallery figure:nth-child(even):not(.gallery-video)::before{left:calc(50% - 45px)}.photo-gallery figure>figcaption{padding-top:28px}.photo-gallery figure>img{padding:10px 10px 30px}}
 @media(prefers-reduced-motion:reduce){.photo-gallery figure>img{transition:none}}
+/* Phone scrapbook: generous borders, alternating tilts, and handwritten-style notes. */
+@media(max-width:760px){
+ .chapter-screen{padding-left:16px;padding-right:16px;overflow:hidden}
+ .photo-gallery{max-width:450px;gap:48px;padding:28px 10px 10px;margin-top:28px}
+ .photo-gallery figure{--photo-tilt:-4deg;gap:0;padding:0 8px}
+ .photo-gallery figure:nth-child(even){--photo-tilt:4deg}
+ .photo-gallery figure:nth-child(3n){--photo-tilt:-3deg}
+ .photo-gallery figure>img{width:94%;margin:0 auto;padding:11px 11px 32px;border-radius:4px;transform:rotate(var(--photo-tilt));box-shadow:0 14px 25px #6135462b,0 2px 4px #61354618;background:#fffefa}
+ .photo-gallery figure>img:hover{transform:rotate(var(--photo-tilt))}
+ .photo-gallery figure:not(.gallery-video)::before,.photo-gallery figure:nth-child(even):not(.gallery-video)::before{top:-9px;left:calc(50% - 39px);width:78px;height:27px;transform:rotate(-12deg);background:repeating-linear-gradient(90deg,#e5c59de0 0 4px,#edd4b1de 4px 8px)}
+ .photo-gallery figure:nth-child(even):not(.gallery-video)::before{transform:rotate(12deg)}
+ .photo-gallery figure>figcaption{position:relative;margin:22px 4px 0;padding:21px 19px 17px;background:#fffaf2;border-left:2px solid #d7a5b2;border-radius:0 16px 16px 0;box-shadow:0 6px 18px #713b4508}
+ .photo-gallery figcaption h3{font-size:31px;margin:12px 0;color:#873750}
+ .photo-gallery figcaption p{font-size:15px;line-height:1.85}
+ .memory-number{font-size:9px;letter-spacing:1.4px}
+ .memory-heart{font-size:25px;margin-top:12px}
+ .photo-gallery .gallery-video{padding:0 8px}
+ .photo-gallery .gallery-video>video{width:100%;border:8px solid #fffefa;border-radius:10px}
+}
