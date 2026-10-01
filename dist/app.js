@@ -207,6 +207,7 @@ document.getElementById('accept-gift').addEventListener('click',()=>{
  const delay=matchMedia('(prefers-reduced-motion: reduce)').matches?0:1400;
  timers.push(setTimeout(()=>{
   document.getElementById('final-gift').classList.add('note-visible');
+  setFriendNote(0, false);
   document.getElementById('gift-reveal').hidden=false;
   document.getElementById('gift-prompt').textContent='Wrapped in love, just for you.';
   document.querySelector('#gift-reveal h3').focus({preventScroll:true});
@@ -214,3 +215,17 @@ document.getElementById('accept-gift').addEventListener('click',()=>{
  },delay));
 });
 document.getElementById('gift-replay').addEventListener('click',()=>document.getElementById('replay').click());
+
+let friendNoteIndex=0;
+const friendCards=[...document.querySelectorAll('.friend-card')];
+function setFriendNote(index,focus=true){
+ friendNoteIndex=Math.max(0,Math.min(friendCards.length-1,index));
+ friendCards.forEach((card,i)=>{card.hidden=i!==friendNoteIndex;});
+ const active=friendCards[friendNoteIndex];
+ document.getElementById('note-position').textContent=(friendNoteIndex+1)+' of '+friendCards.length+' · '+active.dataset.friend;
+ document.getElementById('previous-note').disabled=friendNoteIndex===0;
+ document.getElementById('next-note').disabled=friendNoteIndex===friendCards.length-1;
+ if(focus){const heading=active.querySelector('h3');heading.tabIndex=-1;heading.focus({preventScroll:true});document.querySelector('.friend-card-stack').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'start'});}
+}
+document.getElementById('previous-note').addEventListener('click',()=>setFriendNote(friendNoteIndex-1));
+document.getElementById('next-note').addEventListener('click',()=>setFriendNote(friendNoteIndex+1));

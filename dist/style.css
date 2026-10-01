@@ -282,3 +282,21 @@ body[data-screen="final-gift"] header,body[data-screen="final-gift"] footer{disp
 }
 
 .vyshnavi-note{margin-top:32px;padding-top:28px;border-top:1px solid #e4d2be}
+
+#gift-reveal.note-collection{width:min(540px,100%);padding:0;border:0;background:transparent;box-shadow:none}
+.notes-intro{text-align:center;margin:0 0 30px}.notes-intro>p{margin:10px 0!important;font-style:italic}
+.friend-card-stack{position:relative;isolation:isolate;scroll-margin-top:24px}
+.friend-card-stack::before,.friend-card-stack::after{content:'';position:absolute;inset:8px -5px -6px;background:#efdfd0;border:1px solid #e4cdbf;border-radius:7px;z-index:-1;transform:rotate(-2deg)}
+.friend-card-stack::after{background:#f7e9df;transform:rotate(2deg)}
+.friend-card{position:relative;border:1px solid #e8d7c7;border-radius:7px;background:linear-gradient(135deg,#fffdf7,#fff7ed);padding:42px 32px 30px;box-shadow:0 16px 45px #703d4b16;animation:friendNoteIn .5s ease both}
+.note-seal{position:absolute;right:24px;top:-18px;width:43px;height:43px;border-radius:50%;display:grid;place-items:center;background:#873750;color:#ffe9d5;font:italic 24px 'Cormorant Garamond',Georgia,serif;border:3px solid #f9e8db;box-shadow:0 3px 7px #542a3920}
+#gift-reveal .friend-card h3{font:400 32px/1.2 'Cormorant Garamond',Georgia,serif;margin:22px 0 20px}
+#gift-reveal .friend-card p{font-size:15px;line-height:1.9;color:#70525b}
+.friend-card .closing-signature{border-top:1px solid #ecddd1;padding-top:18px;margin-top:22px}
+.friend-note-nav{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:27px}
+.friend-note-nav button{border-radius:50%;width:43px;height:43px;padding:0;font-size:22px}
+.friend-note-nav button:disabled{opacity:.3;cursor:default;transform:none}
+#note-position{font-size:12px;color:#936e7c;text-align:center}
+@keyframes friendNoteIn{from{opacity:0;transform:translateX(12px) rotate(1deg)}to{opacity:1;transform:translateX(0) rotate(0)}}
+@media(max-width:600px){.friend-card{padding:36px 23px 25px}#gift-reveal .friend-card h3{font-size:29px}#gift-reveal .friend-card p{font-size:14px;line-height:1.85}}
+@media(prefers-reduced-motion:reduce){.friend-card{animation:none}}
