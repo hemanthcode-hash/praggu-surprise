@@ -280,3 +280,5 @@ body[data-screen="final-gift"] header,body[data-screen="final-gift"] footer{disp
  .photo-gallery .gallery-video{padding:0 8px}
  .photo-gallery .gallery-video>video{width:100%;border:8px solid #fffefa;border-radius:10px}
 }
+
+.vyshnavi-note{margin-top:32px;padding-top:28px;border-top:1px solid #e4d2be}
