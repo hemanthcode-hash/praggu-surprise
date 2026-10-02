@@ -2,7 +2,17 @@ const http = require('node:http');
 const fs = require('node:fs');
 const path = require('node:path');
 const root = path.join(__dirname, 'dist');
-const types = {'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.jpeg':'image/jpeg','.mp4':'video/mp4'};
+const types = {'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.jpeg':'image/jpeg','.jpg':'image/jpeg','.mp4':'video/mp4'};
+
+// Ensure uploaded photo is synced into dist/
+const uploadedSrc = 'C:/Users/Hemanth Pelluru/.gemini/antigravity/brain/e994a276-962b-4bbe-ac65-e1d556465630/.user_uploaded/media_1790878102678.jpg';
+const destImg = path.join(root, 'memory-new-year.jpeg');
+try {
+  if (fs.existsSync(uploadedSrc) && !fs.existsSync(destImg)) {
+    fs.copyFileSync(uploadedSrc, destImg);
+  }
+} catch (e) {}
+
 http.createServer((req,res)=>{
   const pathname = new URL(req.url,'http://localhost').pathname;
   const file = path.resolve(root, '.' + (pathname==='/'?'/index.html':decodeURIComponent(pathname)));

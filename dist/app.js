@@ -52,46 +52,160 @@ document.getElementById('entry-form').addEventListener('submit', event => {
   document.getElementById('error').textContent=''; input.removeAttribute('aria-invalid');
   show('wish');
   celebrate();
-  timers.push(setTimeout(()=>{document.getElementById('letter-invite').hidden=false;document.body.classList.add('envelope-visible');document.getElementById('open-letter').focus({preventScroll:true});},3000));
+  timers.push(setTimeout(()=>{document.getElementById('letter-invite').hidden=false;document.body.classList.add('envelope-visible');document.getElementById('open-letter').focus({preventScroll:true});},1000));
 });
+
+let typewriterActive = false;
+function startLetterTypewriter() {
+  const paper = document.querySelector('.letter-paper');
+  if (!paper) return;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    setScrollPaused(false);
+    timers.push(setTimeout(()=>{scrollFrame=requestAnimationFrame(scrollLetter);},1500));
+    return;
+  }
+  if (!paper.dataset.originalHtml) {
+    paper.dataset.originalHtml = paper.innerHTML;
+  }
+  const h2 = paper.querySelector('h2');
+  const paragraphs = [...paper.querySelectorAll('p')];
+  const signature = paper.querySelector('.signature');
+  const items = [
+    { el: h2, text: h2 ? h2.textContent : '' },
+    ...paragraphs.map(p => ({ el: p, text: p.textContent })),
+    { el: signature, isSignature: true }
+  ];
+  items.forEach(item => {
+    if (item.el) {
+      if (item.isSignature) item.el.style.opacity = '0';
+      else item.el.textContent = '';
+    }
+  });
+  const cursor = document.createElement('span');
+  cursor.className = 'typing-cursor';
+  cursor.textContent = '|';
+  let itemIdx = 0, charIdx = 0;
+  typewriterActive = true;
+  function finishTyping() {
+    if (!typewriterActive) return;
+    typewriterActive = false;
+    if (cursor.parentNode) cursor.remove();
+    paper.innerHTML = paper.dataset.originalHtml;
+    setScrollPaused(false);
+    timers.push(setTimeout(()=>{scrollFrame=requestAnimationFrame(scrollLetter);},1500));
+  }
+  paper.onclick = finishTyping;
+  function typeChar() {
+    if (!typewriterActive) return;
+    if (itemIdx >= items.length) {
+      finishTyping();
+      return;
+    }
+    const cur = items[itemIdx];
+    if (!cur.el) { itemIdx++; typeChar(); return; }
+    if (cur.isSignature) {
+      if (cursor.parentNode) cursor.remove();
+      typewriterActive = false;
+      paper.innerHTML = paper.dataset.originalHtml;
+      const sig = paper.querySelector('.signature');
+      if (sig) {
+        sig.style.opacity = '0';
+        sig.style.transition = 'opacity .8s ease';
+        requestAnimationFrame(() => { sig.style.opacity = '1'; });
+      }
+      setScrollPaused(false);
+      timers.push(setTimeout(()=>{scrollFrame=requestAnimationFrame(scrollLetter);},2000));
+      return;
+    }
+    if (charIdx < cur.text.length) {
+      cur.el.textContent = cur.text.substring(0, charIdx + 1);
+      cur.el.appendChild(cursor);
+      charIdx++;
+      
+      // Auto-scroll along with the writing tip
+      const cRect = cursor.getBoundingClientRect();
+      const sRect = letterScroll.getBoundingClientRect();
+      const diff = cRect.bottom - (sRect.bottom - 50);
+      if (diff > 0) letterScroll.scrollTop += diff;
+
+      const char = cur.text[charIdx - 1];
+      const wait = (char === '.' || char === '!' || char === '?' || char === '🎈') ? 90 : (char === ',' ? 45 : 18);
+      timers.push(setTimeout(typeChar, wait));
+    } else {
+      itemIdx++;
+      charIdx = 0;
+      const cRect = cursor.getBoundingClientRect();
+      const sRect = letterScroll.getBoundingClientRect();
+      const diff = cRect.bottom - (sRect.bottom - 50);
+      if (diff > 0) letterScroll.scrollTop += diff;
+      timers.push(setTimeout(typeChar, 70));
+    }
+  }
+  timers.push(setTimeout(typeChar, 80));
+}
+
 document.getElementById('open-letter').addEventListener('click',()=>{
   const envelope = document.getElementById('open-letter');
   envelope.disabled = true;
   envelope.classList.add('opening');
-  const delay = matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 1300;
+  const delay = matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 600;
   timers.push(setTimeout(()=>{
     const invite = document.getElementById('letter-invite');
     invite.classList.add('reading');
     document.getElementById('opened-letter').hidden = false;
     letterScroll.scrollTop = 0; scrollPosition = 0; lastScrollTime = 0;
-    setScrollPaused(matchMedia('(prefers-reduced-motion: reduce)').matches);
+    setScrollPaused(true);
     letterScroll.focus({preventScroll:true});
-    timers.push(setTimeout(()=>{scrollFrame=requestAnimationFrame(scrollLetter);},2500));
+    startLetterTypewriter();
   },delay));
 });
-// Birth-year PIN for the photo chapter.
+// ==================== BIRTH YEAR PIN ====================
 const birthYearPin = '2002';
-document.getElementById('next-chapter').addEventListener('click',()=>{
-  timers.forEach(clearTimeout); timers=[];
-  document.getElementById('birth-pin').value='';
-  document.getElementById('pin-error').textContent='';
-  document.getElementById('birth-pin').removeAttribute('aria-invalid');
-  show('pin-screen');
-  document.getElementById('birth-pin').focus({preventScroll:true});
-});
-document.getElementById('pin-form').addEventListener('submit',event=>{
-  event.preventDefault();
-  const input=document.getElementById('birth-pin');
-  const error=document.getElementById('pin-error');
-  if (!birthYearPin) { error.textContent='This surprise is still being prepared. Come back soon ♡'; return; }
-  if (!/^\d{4}$/.test(input.value) || input.value !== birthYearPin) {
-    error.textContent='That year does not unlock these memories. Try again ♡';
-    input.setAttribute('aria-invalid','true');input.focus();return;
+
+function resetPinScreen() {
+  const input = document.getElementById('birth-pin');
+  if (input) {
+    input.value = '';
+    input.removeAttribute('aria-invalid');
   }
-  input.removeAttribute('aria-invalid');error.textContent='';input.value='';show('chapter');celebrate();
+  const error = document.getElementById('pin-error');
+  if (error) error.textContent = '';
+}
+
+const pinForm = document.getElementById('pin-form');
+if (pinForm) {
+  pinForm.addEventListener('submit', event => {
+    event.preventDefault();
+    const input = document.getElementById('birth-pin');
+    const error = document.getElementById('pin-error');
+    if (!input) return;
+    if (input.value.trim() !== birthYearPin) {
+      error.textContent = 'That year does not unlock these memories. Try 2002 ♡';
+      input.setAttribute('aria-invalid', 'true');
+      input.focus();
+      return;
+    }
+    input.removeAttribute('aria-invalid');
+    error.textContent = '';
+    input.value = '';
+    show('chapter');
+    celebrate();
+  });
+}
+
+document.getElementById('next-chapter').addEventListener('click', () => {
+  timers.forEach(clearTimeout); timers = [];
+  resetPinScreen();
+  show('pin-screen');
+  const input = document.getElementById('birth-pin');
+  if (input) input.focus({ preventScroll: true });
 });
 document.getElementById('replay').addEventListener('click',()=>{
   timers.forEach(clearTimeout); timers=[];
+  typewriterActive = false;
+  resetPinScreen();
+  const paper = document.querySelector('.letter-paper');
+  if (paper && paper.dataset.originalHtml) paper.innerHTML = paper.dataset.originalHtml;
   document.getElementById('letter-invite').classList.remove('reading');
   document.getElementById('opened-letter').hidden=true;
   document.getElementById('open-letter').classList.remove('opening');
@@ -222,7 +336,7 @@ function setFriendNote(index,focus=true){
  friendNoteIndex=Math.max(0,Math.min(friendCards.length-1,index));
  friendCards.forEach((card,i)=>{card.hidden=i!==friendNoteIndex;});
  const active=friendCards[friendNoteIndex];
- document.getElementById('note-position').textContent=(friendNoteIndex+1)+' of '+friendCards.length+' · '+active.dataset.friend;
+ document.getElementById('note-position').textContent=active.dataset.friend+' ♡';
  document.getElementById('previous-note').disabled=friendNoteIndex===0;
  document.getElementById('next-note').disabled=friendNoteIndex===friendCards.length-1;
  if(focus){const heading=active.querySelector('h3');heading.tabIndex=-1;heading.focus({preventScroll:true});document.querySelector('.friend-card-stack').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'start'});}

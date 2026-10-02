@@ -1,11 +1,409 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>For Pragna, with love ♡</title><meta name="description" content="A little birthday surprise for Pragna, from her friends."><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='12' fill='%23772e4d'/%3E%3Ctext x='20' y='29' text-anchor='middle' font-size='30' fill='%23fff0df'%3EP%3C/text%3E%3C/svg%3E"><link rel="stylesheet" href="style.css"><script src="app.js" defer></script></head>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>For Pragna, with love ♡</title><meta name="description" content="A little birthday surprise for Pragna, from her family and friends."><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='12' fill='%23772e4d'/%3E%3Ctext x='20' y='29' text-anchor='middle' font-size='30' fill='%23fff0df'%3EP%3C/text%3E%3C/svg%3E"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Patrick+Hand&family=Caveat:wght@400;500;600;700&family=Dancing+Script:wght@500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"><script src="app.js" defer></script></head>
 <body data-screen="welcome"><div class="ambient" aria-hidden="true"></div><div id="confetti" aria-hidden="true"></div>
-<header><a href="./" class="brand">p<span>♡</span></a><span>A LITTLE BIRTHDAY MAGIC</span><span class="header-note">Made with love, by your friends</span></header>
+<header><a href="./" class="brand">p<span>♡</span></a><span>A LITTLE BIRTHDAY MAGIC</span><span class="header-note">Made with love, by your family &amp; friends</span></header>
 <main>
-<section id="welcome" class="screen welcome"><div class="secret-card"><div class="lock-badge" aria-hidden="true"><svg width="25" height="28" viewBox="0 0 24 28" fill="none"><rect x="4" y="12" width="16" height="13" rx="3" stroke="currentColor" stroke-width="1.7"/><path d="M8 12V8a4 4 0 0 1 8 0v4" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="18" r="1.5" fill="currentColor"/></svg></div><div class="eyebrow">A LITTLE SECRET FOR</div><h1>PRAGNA</h1><p class="secret-alias">Our favourite Praggu ♡</p><p class="secret-intro">Something beautiful is waiting<br>behind this tiny lock.</p><form id="entry-form" novalidate><label for="name">Enter your secret name</label><div class="input-wrap"><input id="name" name="name" placeholder="Your secret name" autocomplete="off" aria-describedby="error" required><span aria-hidden="true">⚿</span></div><p id="error" class="error" role="alert"></p><button type="submit">Open Surprise <span aria-hidden="true">♥</span></button></form><p class="secret-signoff">Made with a little magic &amp; a lot of love</p><span class="secret-friends">FROM YOUR FRIENDS</span></div><span class="landing-heart heart-one" aria-hidden="true">♡</span><span class="landing-heart heart-two" aria-hidden="true">♡</span><span class="landing-star star-one" aria-hidden="true">✧</span><span class="landing-star star-two" aria-hidden="true">✧</span></section>
-<section id="photo" class="screen photo-screen" hidden aria-label="Pragna’s birthday portrait"><img class="photo-blur" src="pragna.jpeg" alt=""><img class="full-photo" src="pragna.jpeg" alt="Pragna’s portrait"><div class="photo-overlay"><p>THE GIRL WE’RE CELEBRATING</p><h2>Our Praggu ♡</h2></div></section>
-<section id="wish" class="screen wish-screen" hidden><div class="eyebrow">MAKE A WISH, Praggu</div><span class="wish-star" aria-hidden="true">✧</span><h2>Happy<br><em>Birthday,</em><br><span>Praggu!</span></h2><p>More laughter. More dreams. More beautiful you.</p><div id="letter-invite" class="letter-invite" hidden><span class="letter-teddy" role="img" aria-label="A little teddy bear">🧸</span><button id="open-letter" class="envelope" aria-label="Open your letter"><span class="envelope-note" aria-hidden="true"><span>Dear Praggu,</span><small>Neekosam, prematho ♡</small></span><span class="envelope-pocket" aria-hidden="true"></span><span class="envelope-flap" aria-hidden="true"></span><span class="envelope-seal" aria-hidden="true">TAP TO OPEN ✧</span><span class="envelope-address" aria-hidden="true">For our Praggu</span></button><div id="opened-letter" class="opened-letter" hidden><div class="letter-scroll" tabindex="0" role="region" aria-label="Birthday letter"><article class="letter-paper" lang="en"><span class="letter-date">FOR YOU, ALWAYS ♡</span><h2 tabindex="-1">Dear Praggu,</h2><p>Happy birthday, and many happy returns of the day! 🎂🎉🎈</p><p>You are a dear friend to each of us, and your friendship means so much to us. We admire your courage, strength, intelligence, and the maturity with which you handle life's challenges.</p><p>Never lose the qualities that make you who you are. May you continue to bring joy and positivity to the lives of those around you and to everyone you meet in the years ahead.</p><p>May the year ahead bring you happiness, new opportunities, and success in all that you do. We wish you the strength to overcome every challenge, the confidence to follow your dreams, and a long, healthy life filled with love and laughter.</p><div class="signature">With love,<br><strong>Your friends ♡</strong></div></article></div><div class="letter-controls"><button id="pause-letter" class="secondary" aria-pressed="false">Pause scrolling</button><button id="next-chapter">Continue <span aria-hidden="true">→</span></button></div></div><p class="envelope-hint">A little letter, just for you.<span>Tap the seal to open</span></p></div></section>
+<section id="welcome" class="screen welcome"><div class="secret-card"><div class="lock-badge" aria-hidden="true"><svg width="25" height="28" viewBox="0 0 24 28" fill="none"><rect x="4" y="12" width="16" height="13" rx="3" stroke="currentColor" stroke-width="1.7"/><path d="M8 12V8a4 4 0 0 1 8 0v4" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="18" r="1.5" fill="currentColor"/></svg></div><div class="eyebrow">A LITTLE SECRET FOR</div><h1>PRAGNA</h1><p class="secret-alias">Our favourite Praggu ♡</p><p class="secret-intro">Something beautiful is waiting<br>behind this tiny lock.</p><form id="entry-form" novalidate><label for="name">Enter your secret name</label><div class="input-wrap"><input id="name" name="name" placeholder="Your secret name" autocomplete="off" aria-describedby="error" required><span aria-hidden="true">⚿</span></div><p id="error" class="error" role="alert"></p><button type="submit">Open Surprise <span aria-hidden="true">♥</span></button></form><p class="secret-signoff">Made with a little magic &amp; a lot of love</p><span class="secret-friends">FROM YOUR FAMILY AND FRIENDS</span></div><span class="landing-heart heart-one" aria-hidden="true">♡</span><span class="landing-heart heart-two" aria-hidden="true">♡</span><span class="landing-star star-one" aria-hidden="true">✧</span><span class="landing-star star-two" aria-hidden="true">✧</span></section>
+<section id="photo" class="screen photo-screen" hidden aria-label="Pragna's birthday portrait"><img class="photo-blur" src="pragna.jpeg" alt=""><img class="full-photo" src="pragna.jpeg" alt="Pragna's portrait"><div class="photo-overlay"><p>THE GIRL WE'RE CELEBRATING</p><h2>Our Praggu ♡</h2></div></section>
+<section id="wish" class="screen wish-screen" hidden><div class="eyebrow">MAKE A WISH, Praggu</div><span class="wish-star" aria-hidden="true">✧</span><h2>Happy<br><em>Birthday,</em><br><span>Praggu!</span></h2><p>More laughter. More dreams. More beautiful you.</p><div id="letter-invite" class="letter-invite" hidden><span class="letter-teddy" role="img" aria-label="A little teddy bear">🧸</span><button id="open-letter" class="envelope" aria-label="Open your letter"><span class="envelope-note" aria-hidden="true"><span>Dear Praggu,</span><small>Neekosam, prematho ♡</small></span><span class="envelope-pocket" aria-hidden="true"></span><span class="envelope-flap" aria-hidden="true"></span><span class="envelope-seal" aria-hidden="true">TAP TO OPEN ✧</span><span class="envelope-address" aria-hidden="true">For our Praggu</span></button><div id="opened-letter" class="opened-letter" hidden><span class="letter-badge-heart" aria-hidden="true">♥</span><div class="letter-scroll" tabindex="0" role="region" aria-label="Birthday letter"><article class="letter-paper" lang="en"><span class="letter-date">A MESSAGE FROM AMMA ♡</span><h2 tabindex="-1">Dear Praggu,</h2><p>When we were going through so much pain, God gifted us <strong>Pragna</strong> ❤️🥹 You understand us so well, more than words can explain. Sometimes, I wish she had been born as a son, because then she could have stayed with us forever 💔❤️</p><p>Many more happy returns of the day, <strong>Pragna</strong> ❤️✨</p><div class="signature">With all my love,<br><strong>Amma ♡</strong></div></article></div><div class="letter-controls"><button id="pause-letter" class="secondary" aria-pressed="false">Pause scrolling</button><button id="next-chapter">Continue <span aria-hidden="true">→</span></button></div></div><p class="envelope-hint">A little letter, just for you.<span>Tap the seal to open</span></p></div></section>
 
-<section id="pin-screen" class="screen pin-screen" hidden><div class="secret-card"><div class="lock-badge" aria-hidden="true">♡</div><div class="eyebrow">ONE MORE LITTLE SECRET</div><h2>Unlock Bday Gift</h2><p class="secret-intro">The year your story began.</p><form id="pin-form" novalidate><label for="birth-pin">Enter your birth year</label><div class="input-wrap"><input id="birth-pin" type="password" inputmode="numeric" maxlength="4" placeholder="4-digit year" autocomplete="off" aria-describedby="pin-error" required></div><p id="pin-error" class="error" role="alert"></p><button type="submit">Show photos <span aria-hidden="true">♡</span></button></form></div></section><section id="chapter" class="screen chapter-screen" hidden><div class="eyebrow">OUR FAVOURITE MEMORIES</div><div class="gallery-birthday"><span class="gallery-spark" aria-hidden="true">✦</span><h2 aria-label="Happy Birthday, Praggu!"><span class="birthday-line" aria-hidden="true"><span style="--delay:0s">H</span><span style="--delay:0.12s">a</span><span style="--delay:0.24s">p</span><span style="--delay:0.36s">p</span><span style="--delay:0.48s">y</span><span> </span><span style="--delay:0.72s">B</span><span style="--delay:0.84s">i</span><span style="--delay:0.96s">r</span><span style="--delay:1.08s">t</span><span style="--delay:1.2s">h</span><span style="--delay:1.3199999999999998s">d</span><span style="--delay:1.44s">a</span><span style="--delay:1.56s">y</span></span><em aria-hidden="true">Praggu!</em></h2><span class="gallery-spark" aria-hidden="true">✧</span></div><p>Every picture holds a little piece of your story, Praggu.</p><div class="photo-gallery"><figure><img src="memory-21-07-56.jpeg" alt="Praggu celebrating with balloons and birthday lights" loading="lazy"><figcaption><span class="memory-number">01 / A LITTLE PIECE OF YOUR STORY</span><h3>Your day to shine</h3><p>The balloons, lights, and wishes are all for you. We hope you feel celebrated today and appreciated every day after it.</p><span class="memory-heart" aria-hidden="true">♡</span></figcaption></figure><figure><img src="praggu-heart.jpeg" alt="Praggu making a heart with her hands, wearing a pink and gold outfit" loading="lazy"><figcaption><span class="memory-number">02 / A LITTLE PIECE OF YOUR STORY</span><h3>Made of love</h3><p>Today is a celebration of you and the happiness you bring to the people around you. May that love always find its way back to you.</p><span class="memory-heart" aria-hidden="true">♡</span></figcaption></figure><figure><img src="memory-00-49-33.jpeg" alt="Friends making heart shapes together at night" loading="lazy"><figcaption><span class="memory-number">03 / A LITTLE PIECE OF YOUR STORY</span><h3>Our kind of friendship</h3><p>The sweetest memories are often the simplest ones: being together, sharing a laugh, and knowing we have each other.</p><span class="memory-heart" aria-hidden="true">♡</span></figcaption></figure><figure><img src="praggu-smile.jpeg" alt="Praggu smiling with her hands beneath her chin, wearing a pink and gold outfit" loading="lazy"><figcaption><span class="memory-number">04 / A LITTLE PIECE OF YOUR STORY</span><h3>That lovely smile</h3><p>May you always find reasons to smile, even in the smallest moments. We hope this year gives you plenty of them.</p><span class="memory-heart" aria-hidden="true">♡</span></figcaption></figure><figure><img src="memory-00-51-08.jpeg" alt="Three friends taking a selfie outside a temple" loading="lazy"><figcaption><span class="memory-number">05 / A LITTLE PIECE OF YOUR STORY</span><h3>A day to remember</h3><p>A photograph can hold a moment, but it is the people beside us who make it special. Here is to many more days together.</p><span class="memory-heart" aria-hidden="true">♡</span></figcaption></figure><figure><img src="praggu-blue-heart.jpeg" alt="Praggu wearing glasses and a blue floral dress, making a heart with her hands" loading="lazy"><figcaption><span class="memory-number">06 / A LITTLE PIECE OF YOUR STORY</span><h3>A heart full of kindness</h3><p>Praggu, your friendship means so much to all of us. This little heart is a lovely reminder of the love we share.</p><span class="memory-heart" aria-hidden="true">♡</span></figcaption></figure><figure><img src="memory-00-51-24.jpeg" alt="Friends posing together for an indoor group selfie" loading="lazy"><figcaption><span class="memory-number">07 / A LITTLE PIECE OF YOUR STORY</span><h3>Better together</h3><p>Different personalities, shared laughter, and a friendship we treasure. You will always have a special place in this group.</p><span class="memory-heart" aria-hidden="true">♡</span></figcaption></figure><figure><img src="memory-21-04-01.jpeg" alt="Praggu in a pink dress" loading="lazy"><figcaption><span class="memory-number">08 / A LITTLE PIECE OF YOUR STORY</span><h3>A wish just for you</h3><p>May the year ahead bring opportunities that excite you, dreams that come true, and happiness that stays with you.</p><span class="memory-heart" aria-hidden="true">♡</span></figcaption></figure><figure><img src="memory-00-53-02.jpeg" alt="Praggu and a friend standing beside a brick wall" loading="lazy"><figcaption><span class="memory-number">09 / A LITTLE PIECE OF YOUR STORY</span><h3>Side by side</h3><p>Having a dear friend beside you makes the journey sweeter. May your life always be filled with people who care for you.</p><span class="memory-heart" aria-hidden="true">♡</span></figcaption></figure><figure><img src="memory-00-52-43.jpeg" alt="Praggu holding her hand toward the camera near brick ruins" loading="lazy"><figcaption><span class="memory-number">10 / A LITTLE PIECE OF YOUR STORY</span><h3>Your playful side</h3><p>Never lose the part of you that makes room for fun. Life needs those spontaneous moments just as much as the serious ones.</p><span class="memory-heart" aria-hidden="true">♡</span></figcaption></figure><figure><img src="memory-21-03-08.jpeg" alt="Praggu making a heart with her hands beneath a leafy entrance" loading="lazy"><figcaption><span class="memory-number">11 / A LITTLE PIECE OF YOUR STORY</span><h3>Love in the little things</h3><p>A small gesture can say so much. Thank you for being a special friend and for giving us so many moments to treasure.</p><span class="memory-heart" aria-hidden="true">♡</span></figcaption></figure><figure><img src="memory-00-54-16.jpeg" alt="Two friends posing together beneath a brick arch" loading="lazy"><figcaption><span class="memory-number">12 / A LITTLE PIECE OF YOUR STORY</span><h3>Moments worth keeping</h3><p>It is not always the big occasions we remember most. Sometimes it is simply spending time with the people who matter.</p><span class="memory-heart" aria-hidden="true">♡</span></figcaption></figure><figure><img src="memory-00-54-01.jpeg" alt="Praggu making a heart with her hands inside a brick arch" loading="lazy"><figcaption><span class="memory-number">13 / A LITTLE PIECE OF YOUR STORY</span><h3>A little extra love</h3><p>This birthday comes with so many wishes for you: happiness, good health, and the confidence to follow your dreams.</p><span class="memory-heart" aria-hidden="true">♡</span></figcaption></figure><figure><img src="memory-00-55-11.jpeg" alt="Three friends standing together outdoors" loading="lazy"><figcaption><span class="memory-number">14 / A LITTLE PIECE OF YOUR STORY</span><h3>More memories ahead</h3><p>These photographs are just a few pages of your story. We look forward to sharing many more happy moments with you.</p><span class="memory-heart" aria-hidden="true">♡</span></figcaption></figure><figure><img src="memory-21-08-55.jpeg" alt="Praggu seated in a turquoise outfit" loading="lazy"><figcaption><span class="memory-number">15 / A LITTLE PIECE OF YOUR STORY</span><h3>Strength and grace</h3><p>We admire the maturity with which you handle life’s challenges. May you keep growing stronger while making time for your own happiness.</p><span class="memory-heart" aria-hidden="true">♡</span></figcaption></figure><figure><img src="memory-21-07-03.jpeg" alt="A close-up selfie of Praggu" loading="lazy"><figcaption><span class="memory-number">16 / A LITTLE PIECE OF YOUR STORY</span><h3>Always our Praggu</h3><p>You do not need a special occasion to matter to us. Today is simply our chance to remind you how much you are loved.</p><span class="memory-heart" aria-hidden="true">♡</span></figcaption></figure><figure><img src="memory-00-54-43.jpeg" alt="Praggu wearing a sunhat and a checked dress" loading="lazy"><figcaption><span class="memory-number">17 / A LITTLE PIECE OF YOUR STORY</span><h3>A little sunshine</h3><p>Keep finding joy in new places and little adventures. There are so many beautiful moments still waiting for you.</p><span class="memory-heart" aria-hidden="true">♡</span></figcaption></figure><figure><img src="praggu-illustration.jpeg" alt="An illustrated portrait of Praggu wearing a patterned sari" loading="lazy"><figcaption><span class="memory-number">18 / A LITTLE PIECE OF YOUR STORY</span><h3>One of a kind</h3><p>A playful portrait of someone who holds a special place in our lives. There is only one you, and we are so glad to know you.</p><span class="memory-heart" aria-hidden="true">♡</span></figcaption></figure><figure><img src="pragna.jpeg" alt="A pencil-style portrait of Pragna wearing a hat"><figcaption><span class="memory-number">19 / A LITTLE PIECE OF YOUR STORY</span><h3>Beautifully yourself</h3><p>Your courage, intelligence, and strength are qualities we truly admire. Keep being the person you are, Praggu.</p><span class="memory-heart" aria-hidden="true">♡</span></figcaption></figure><figure class="gallery-video"><video controls playsinline preload="metadata" aria-label="A video memory for Praggu"><source src="praggu-memory.mp4" type="video/mp4">Your browser cannot play this video. <a href="praggu-memory.mp4">Open the video</a>.</video><figcaption><span class="memory-number">20 / A LITTLE PIECE OF YOUR STORY</span><h3>A memory in motion</h3><p>Some moments are worth watching again. Here is a little piece of your story to revisit whenever you want a smile.</p><span class="memory-heart" aria-hidden="true">♡</span></figcaption></figure></div><button id="continue-cake">Continue <span aria-hidden="true">→</span></button></section>
-<section id="cake-screen" class="screen cake-screen" hidden><div class="cake-party" aria-label="Birthday teddy with balloons and cake"><span>🎈 🧸 🎈</span><span>🎁 🎂 🎁</span></div><div class="eyebrow">A LITTLE BIRTHDAY TRADITION</div><h2>Make a wish, <em>Praggu.</em></h2><div class="cake-board"><span id="piece-count" class="piece-count" role="status">Pieces: 1</span><canvas id="birthday-cake" width="600" height="600" aria-label="Birthday cake. Drag across the cake to cut it, or use the Slice cake button below."></canvas></div><p class="cake-instruction">Drag all the way across the cake to slice it.</p><p id="cake-message" class="cake-message" role="status">A slice of happiness, just for you ♡</p><div class="cake-actions"><button id="slice-cake">Slice cake</button><button id="reset-cake" class="secondary">Start again</button></div><button id="replay" class="cake-replay secondary">Experience it again ↺</button></section><section id="final-gift" class="screen final-gift" hidden><div class="eyebrow">A LITTLE SURPRISE FOR YOU</div><h2>One last thing,<br><em>accept your gift.</em></h2><div class="gift-character" aria-hidden="true">🧸</div><button id="accept-gift" class="accept-gift" aria-label="Accept your birthday gift"><span class="gift-box" aria-hidden="true"><span class="gift-lid">🎀</span><span class="gift-base"></span><span class="gift-ribbon"></span><span class="gift-glow">✦</span></span></button><p id="gift-prompt">A little gift, with all our love.</p><div id="gift-reveal" class="closing-note note-collection" hidden><div class="notes-intro"><span class="closing-note-label">FOUR FRIENDS. SO MUCH LOVE.</span><p>Little letters to keep close to your heart.</p></div><div class="friend-card-stack"><article class="friend-card" data-friend="Sowmya" ><span class="note-seal" aria-hidden="true">S</span><span class="closing-note-label">SPECIALLY FROM SOWMYA ♡</span><h3 tabindex="-1">Dear Praggu,</h3><p>Nine years… and you’re not just someone I’ve known for nine years. You’ve been a part of so many moments in my life, and when I look back, so many of my memories have you in them.</p><p>Life will change, people will come and go, and maybe someday we won’t talk as much as we do now. But I hope that no matter where life takes us, we never become strangers.</p><p>Because after all these years, you’re not just a friend anymore… You’re a part of my life, my memories, and a little part of who I am today.</p><p>Finally, lotsss of love to youuuu, Pragguuu gorllll! ♡</p><div class="closing-signature">Always with love,<br><strong>Sowmya ♡</strong></div></article><article class="friend-card" data-friend="Vyshnavi Sindhu" hidden><span class="note-seal" aria-hidden="true">V</span><span class="closing-note-label">SPECIALLY FROM VYSHNAVI SINDHU ♡</span><h3>Dear Praggu,</h3><p>You are not just my senior in college, but also my senior at the company. I really enjoy the time we spend travelling together by bus and chatting about different things.</p><p>You are such a kind and caring person, and you have a very soft heart. I feel really comfortable talking to you, and I’m happy that I got to know you both in college and at work. ❤️</p><div class="closing-signature">Your regards,<br><strong>Vyshnavi Sindhu</strong></div></article><article class="friend-card" data-friend="Sindhu" hidden><span class="note-seal" aria-hidden="true">S</span><span class="closing-note-label">SPECIALLY FROM SINDHU ♡</span><h3>Happy Birthday, akka! 🥰</h3><p>You’re one of the best people I’ve met in my life 💕. Meeru chala sweetheart ❤️. Anni situations ni cool and calm ga chala baga handle chestharu, annitini positive ga theesukuntaru. Mee daggara nunchi chala nerchukunnanu, akka.</p><p>Mee tho gadipina aa last moments chala bagunnayi 🤗. Meeru unna time lo mee jokes tho chala enjoy chesanu. Kaani ippudu mimmalni, mee guidance ni, meeru ichina support ni chala miss avuthunnanu, akka 🫂🫂.</p><p>Nannu okkadanini chesi vellipoyaru… naa pakkana mee place alane undi. Ayina, meeru eppudu happy ga undalani korukuntunnanu, akka. Ekkada unna mee best ivvandi 😇.</p><p>Once again, Happy Birthday, akka! 🥰</p><div class="closing-signature">From,<br><strong>Sindhu ♡</strong></div></article><article class="friend-card" data-friend="Sudheer" hidden><span class="note-seal" aria-hidden="true">S</span><span class="closing-note-label">SPECIALLY FROM SUDHEER ♡</span><h3>Happy Birthday, Pragnaaa Garu! ❤️🎂🥳</h3><p>Honestly, you’re much more than just a senior to me. Somewhere along the way, you became a really good friend and someone I genuinely feel comfortable talking to. Your kindness, caring nature, and the way you always make people feel comfortable are things I really appreciate about you.</p><p>I’m truly grateful for all the little conversations, laughs, advice, and memories we’ve shared. Having someone like you around makes the workplace feel a little more special. ❤️</p><p>I hope this new year of your life brings you endless happiness, peace, success, and everything your heart wishes for. Always keep smiling and stay the wonderful person you are. 🥰✨</p><p>Happy Birthday once again, Pragnaaa Garu! 🎉❤️</p><div class="closing-signature">From,<br><strong>Sudheer</strong></div></article></div><nav class="friend-note-nav" aria-label="Messages from friends"><button id="previous-note" class="secondary" disabled aria-label="Previous friend message">←</button><span id="note-position" role="status">1 of 4 · Sowmya</span><button id="next-note" aria-label="Next friend message">→</button></nav></div><button id="gift-replay" class="secondary">Experience it again ↺</button></section></main><footer><span>FOR PRAGNA, WITH LOVE</span><span>♡</span><span>A SURPRISE WORTH A SMILE</span></footer></body></html>
+<section id="pin-screen" class="screen pin-screen" hidden>
+  <div class="secret-card">
+    <div class="lock-badge" aria-hidden="true"><svg width="25" height="28" viewBox="0 0 24 28" fill="none"><rect x="4" y="12" width="16" height="13" rx="3" stroke="currentColor" stroke-width="1.7"/><path d="M8 12V8a4 4 0 0 1 8 0v4" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="18" r="1.5" fill="currentColor"/></svg></div>
+    <div class="eyebrow">ONE MORE LITTLE SECRET</div>
+    <h2>Unlock Bday Gift</h2>
+    <p class="secret-intro">The year your story began.</p>
+    <form id="pin-form" novalidate>
+      <label for="birth-pin">Enter your birth year</label>
+      <div class="input-wrap">
+        <input id="birth-pin" type="password" inputmode="numeric" maxlength="4" placeholder="4-digit year" autocomplete="off" aria-describedby="pin-error" required>
+        <span aria-hidden="true">⚿</span>
+      </div>
+      <p class="pin-hint">2002 is the pin ♡</p>
+      <p id="pin-error" class="error" role="alert"></p>
+      <button type="submit">Show photos <span aria-hidden="true">♡</span></button>
+    </form>
+  </div>
+</section><section id="chapter" class="screen chapter-screen" hidden><div class="eyebrow">OUR FAVOURITE MEMORIES</div><div class="gallery-birthday"><span class="gallery-spark" aria-hidden="true">✦</span><h2 aria-label="Happy Birthday, Praggu!"><span class="birthday-line" aria-hidden="true"><span style="--delay:0s">H</span><span style="--delay:0.12s">a</span><span style="--delay:0.24s">p</span><span style="--delay:0.36s">p</span><span style="--delay:0.48s">y</span><span> </span><span style="--delay:0.72s">B</span><span style="--delay:0.84s">i</span><span style="--delay:0.96s">r</span><span style="--delay:1.08s">t</span><span style="--delay:1.2s">h</span><span style="--delay:1.3199999999999998s">d</span><span style="--delay:1.44s">a</span><span style="--delay:1.56s">y</span></span><em aria-hidden="true">Praggu!</em></h2><span class="gallery-spark" aria-hidden="true">✧</span></div><p>Every picture holds a little piece of your story, Praggu.</p><div class="photo-gallery"><figure><img src="memory-21-07-56.jpeg" alt="Praggu celebrating with balloons and birthday lights" loading="lazy"><figcaption><span class="memory-number">01 / A LITTLE PIECE OF YOUR STORY</span><h3>Your day to shine</h3><p>The balloons, lights, and wishes are all for you. We hope you feel celebrated today and appreciated every day after it.</p><span class="memory-heart" aria-hidden="true">♡</span></figcaption></figure><figure><img src="praggu-heart.jpeg" alt="Praggu making a heart with her hands, wearing a pink and gold outfit" loading="lazy"><figcaption><span class="memory-number">02 / A LITTLE PIECE OF YOUR STORY</span><h3>Made of love</h3><p>Today is a celebration of you and the happiness you bring to the people around you. May that love always find its way back to you.</p><span class="memory-heart" aria-hidden="true">♡</span></figcaption></figure><figure><img src="memory-00-49-33.jpeg" alt="Friends making heart shapes together at night" loading="lazy"><figcaption><span class="memory-number">03 / A LITTLE PIECE OF YOUR STORY</span><h3>Our kind of friendship</h3><p>The sweetest memories are often the simplest ones: being together, sharing a laugh, and knowing we have each other.</p><span class="memory-heart" aria-hidden="true">♡</span></figcaption></figure><figure><img src="praggu-smile.jpeg" alt="Praggu smiling with her hands beneath her chin, wearing a pink and gold outfit" loading="lazy"><figcaption><span class="memory-number">04 / A LITTLE PIECE OF YOUR STORY</span><h3>That lovely smile</h3><p>May you always find reasons to smile, even in the smallest moments. We hope this year gives you plenty of them.</p><span class="memory-heart" aria-hidden="true">♡</span></figcaption></figure><figure><img src="memory-00-51-08.jpeg" alt="Three friends taking a selfie outside a temple" loading="lazy"><figcaption><span class="memory-number">05 / A LITTLE PIECE OF YOUR STORY</span><h3>A day to remember</h3><p>A photograph can hold a moment, but it is the people beside us who make it special. Here is to many more days together.</p><span class="memory-heart" aria-hidden="true">♡</span></figcaption></figure><figure><img src="praggu-blue-heart.jpeg" alt="Praggu wearing glasses and a blue floral dress, making a heart with her hands" loading="lazy"><figcaption><span class="memory-number">06 / A LITTLE PIECE OF YOUR STORY</span><h3>A heart full of kindness</h3><p>Praggu, your friendship means so much to all of us. This little heart is a lovely reminder of the love we share.</p><span class="memory-heart" aria-hidden="true">♡</span></figcaption></figure><figure><img src="memory-00-51-24.jpeg" alt="Friends posing together for an indoor group selfie" loading="lazy"><figcaption><span class="memory-number">07 / A LITTLE PIECE OF YOUR STORY</span><h3>Better together</h3><p>Different personalities, shared laughter, and a friendship we treasure. You will always have a special place in this group.</p><span class="memory-heart" aria-hidden="true">♡</span></figcaption></figure><figure><img src="memory-21-04-01.jpeg" alt="Praggu in a pink dress" loading="lazy"><figcaption><span class="memory-number">08 / A LITTLE PIECE OF YOUR STORY</span><h3>A wish just for you</h3><p>May the year ahead bring opportunities that excite you, dreams that come true, and happiness that stays with you.</p><span class="memory-heart" aria-hidden="true">♡</span></figcaption></figure><figure><img src="memory-00-53-02.jpeg" alt="Praggu and a friend standing beside a brick wall" loading="lazy"><figcaption><span class="memory-number">09 / A LITTLE PIECE OF YOUR STORY</span><h3>Side by side</h3><p>Having a dear friend beside you makes the journey sweeter. May your life always be filled with people who care for you.</p><span class="memory-heart" aria-hidden="true">♡</span></figcaption></figure><figure><img src="memory-00-52-43.jpeg" alt="Praggu holding her hand toward the camera near brick ruins" loading="lazy"><figcaption><span class="memory-number">10 / A LITTLE PIECE OF YOUR STORY</span><h3>Your playful side</h3><p>Never lose the part of you that makes room for fun. Life needs those spontaneous moments just as much as the serious ones.</p><span class="memory-heart" aria-hidden="true">♡</span></figcaption></figure><figure><img src="memory-21-03-08.jpeg" alt="Praggu making a heart with her hands beneath a leafy entrance" loading="lazy"><figcaption><span class="memory-number">11 / A LITTLE PIECE OF YOUR STORY</span><h3>Love in the little things</h3><p>A small gesture can say so much. Thank you for being a special friend and for giving us so many moments to treasure.</p><span class="memory-heart" aria-hidden="true">♡</span></figcaption></figure><figure><img src="memory-00-54-16.jpeg" alt="Two friends posing together beneath a brick arch" loading="lazy"><figcaption><span class="memory-number">12 / A LITTLE PIECE OF YOUR STORY</span><h3>Moments worth keeping</h3><p>It is not always the big occasions we remember most. Sometimes it is simply spending time with the people who matter.</p><span class="memory-heart" aria-hidden="true">♡</span></figcaption></figure><figure><img src="memory-00-54-01.jpeg" alt="Praggu making a heart with her hands inside a brick arch" loading="lazy"><figcaption><span class="memory-number">13 / A LITTLE PIECE OF YOUR STORY</span><h3>A little extra love</h3><p>This birthday comes with so many wishes for you: happiness, good health, and the confidence to follow your dreams.</p><span class="memory-heart" aria-hidden="true">♡</span></figcaption></figure><figure><img src="memory-00-55-11.jpeg" alt="Three friends standing together outdoors" loading="lazy"><figcaption><span class="memory-number">14 / A LITTLE PIECE OF YOUR STORY</span><h3>More memories ahead</h3><p>These photographs are just a few pages of your story. We look forward to sharing many more happy moments with you.</p><span class="memory-heart" aria-hidden="true">♡</span></figcaption></figure><figure><img src="memory-21-08-55.jpeg" alt="Praggu seated in a turquoise outfit" loading="lazy"><figcaption><span class="memory-number">15 / A LITTLE PIECE OF YOUR STORY</span><h3>Strength and grace</h3><p>We admire the maturity with which you handle life's challenges. May you keep growing stronger while making time for your own happiness.</p><span class="memory-heart" aria-hidden="true">♡</span></figcaption></figure><figure><img src="memory-21-07-03.jpeg" alt="A close-up selfie of Praggu" loading="lazy"><figcaption><span class="memory-number">16 / A LITTLE PIECE OF YOUR STORY</span><h3>Always our Praggu</h3><p>You do not need a special occasion to matter to us. Today is simply our chance to remind you how much you are loved.</p><span class="memory-heart" aria-hidden="true">♡</span></figcaption></figure><figure><img src="memory-00-54-43.jpeg" alt="Praggu wearing a sunhat and a checked dress" loading="lazy"><figcaption><span class="memory-number">17 / A LITTLE PIECE OF YOUR STORY</span><h3>A little sunshine</h3><p>Keep finding joy in new places and little adventures. There are so many beautiful moments still waiting for you.</p><span class="memory-heart" aria-hidden="true">♡</span></figcaption></figure><figure><img src="praggu-illustration.jpeg" alt="An illustrated portrait of Praggu wearing a patterned sari" loading="lazy"><figcaption><span class="memory-number">18 / A LITTLE PIECE OF YOUR STORY</span><h3>One of a kind</h3><p>A playful portrait of someone who holds a special place in our lives. There is only one you, and we are so glad to know you.</p><span class="memory-heart" aria-hidden="true">♡</span></figcaption></figure><figure><img src="pragna.jpeg" alt="A pencil-style portrait of Pragna wearing a hat"><figcaption><span class="memory-number">19 / A LITTLE PIECE OF YOUR STORY</span><h3>Beautifully yourself</h3><p>Your courage, intelligence, and strength are qualities we truly admire. Keep being the person you are, Praggu.</p><span class="memory-heart" aria-hidden="true">♡</span></figcaption></figure><figure><img src="memory-new-year.jpeg" alt="Praggu with friends celebrating together" loading="lazy"><figcaption><span class="memory-number">20 / A LITTLE PIECE OF YOUR STORY</span><h3>Celebrations &amp; warm smiles</h3><p>Surrounded by love, radiant laughter, and the friends who adore you. May every year bring moments as vibrant and joyful as your smile.</p><span class="memory-heart" aria-hidden="true">♡</span></figcaption></figure><figure class="gallery-video"><video controls playsinline preload="metadata" aria-label="A video memory for Praggu"><source src="praggu-memory.mp4" type="video/mp4">Your browser cannot play this video. <a href="praggu-memory.mp4">Open the video</a>.</video><figcaption><span class="memory-number">21 / A LITTLE PIECE OF YOUR STORY</span><h3>A memory in motion</h3><p>Some moments are worth watching again. Here is a little piece of your story to revisit whenever you want a smile.</p><span class="memory-heart" aria-hidden="true">♡</span></figcaption></figure></div><button id="continue-cake">Continue <span aria-hidden="true">→</span></button></section>
+<section id="cake-screen" class="screen cake-screen" hidden><div class="cake-party" aria-label="Birthday teddy with balloons and cake"><span>🎈 🧸 🎈</span><span>🎁 🎂 🎁</span></div><div class="eyebrow">A LITTLE BIRTHDAY TRADITION</div><h2>Make a wish, <em>Praggu.</em></h2><div class="cake-board"><span id="piece-count" class="piece-count" role="status">Pieces: 1</span><canvas id="birthday-cake" width="600" height="600" aria-label="Birthday cake. Drag across the cake to cut it, or use the Slice cake button below."></canvas></div><p class="cake-instruction">Drag all the way across the cake to slice it.</p><p id="cake-message" class="cake-message" role="status">A slice of happiness, just for you ♡</p><div class="cake-actions"><button id="slice-cake">Slice cake</button><button id="reset-cake" class="secondary">Start again</button></div><button id="replay" class="cake-replay secondary">Experience it again ↺</button></section>
+
+<!-- ====================== REDESIGNED FINAL GIFT PAGE ====================== -->
+<section id="final-gift" class="screen final-gift" hidden>
+  <div class="eyebrow">A LITTLE SURPRISE FOR YOU</div>
+  <h2>One last thing,<br><em>accept your gift.</em></h2>
+  <div class="gift-character" aria-hidden="true">🧸</div>
+  <button id="accept-gift" class="accept-gift" aria-label="Accept your birthday gift">
+    <span class="gift-box" aria-hidden="true">
+      <span class="gift-lid">🎀</span>
+      <span class="gift-base"></span>
+      <span class="gift-ribbon"></span>
+      <span class="gift-glow">✦</span>
+    </span>
+  </button>
+  <p id="gift-prompt">A little gift, with all our love.</p>
+
+  <div id="gift-reveal" class="closing-note note-collection" hidden>
+
+    <!-- ✧ Hero Header ✧ -->
+    <div class="gift-hero">
+      <span class="gift-hero-sparkle left" aria-hidden="true">✧</span>
+      <div class="gift-hero-content">
+        <span class="closing-note-label">FRIENDS · SO MUCH LOVE</span>
+        <h3 tabindex="-1">Little letters to keep<br>close to your heart</h3>
+        <div class="gift-hero-divider" aria-hidden="true">
+          <span></span><span class="gift-hero-heart">♡</span><span></span>
+        </div>
+      </div>
+      <span class="gift-hero-sparkle right" aria-hidden="true">✦</span>
+    </div>
+
+    <!-- ✧ Friend Card Stack ✧ -->
+    <div class="friend-card-stack">
+
+      <article class="friend-card" data-friend="Sowmya">
+        <div class="card-header">
+          <span class="note-seal" aria-hidden="true">S</span>
+          <div class="card-header-text">
+            <span class="closing-note-label">SPECIALLY FROM SOWMYA ♡</span>
+            <span class="card-relation">Friend for 9 years</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <h3 tabindex="-1">Dear Praggu,</h3>
+          <p>Nine years… and you're not just someone I've known for nine years. You've been a part of so many moments in my life, and when I look back, so many of my memories have you in them.</p>
+          <p>Life will change, people will come and go, and maybe someday we won't talk as much as we do now. But I hope that no matter where life takes us, we never become strangers.</p>
+          <p>Because after all these years, you're not just a friend anymore… You're a part of my life, my memories, and a little part of who I am today.</p>
+          <p class="highlight-text">Finally, lotsss of love to youuuu, Pragguuu gorllll! ♡</p>
+        </div>
+        <div class="card-footer">
+          <div class="closing-signature">Always with love,<br><strong>Sowmya ♡</strong></div>
+          <span class="card-heart" aria-hidden="true">♡</span>
+        </div>
+      </article>
+
+      <article class="friend-card" data-friend="Chaithanya" hidden>
+        <div class="card-header">
+          <span class="note-seal" aria-hidden="true">C</span>
+          <div class="card-header-text">
+            <span class="closing-note-label">SPECIALLY FROM CHAITHANYA ♡</span>
+            <span class="card-relation">Like a Sister &amp; Brother</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <h3>Happy Birthday, Pragna Akka ❤️🎂</h3>
+          <p>I honestly don’t know how to put everything into words, but I really want to say this today.</p>
+          <p>In these almost 1.5 years, you have become much more than just a friend to me. You are genuinely the only person I have ever felt like I could call my sister, and that place you have in my life is really special to me. ❤️</p>
+          <p>Thank you, Akka, for all the little things you’ve done, for listening to me, understanding me, supporting me, and simply being there. Some things may seem small at the time, but they mean a lot to me, and I’ll always remember them.</p>
+          <p>And I also want to say sorry. If I have ever said something, done something, or behaved in a way that hurt you or made you feel bad, intentionally or unintentionally, I’m genuinely sorry. I may not always realize my mistakes immediately, but I never want my words or actions to hurt you.</p>
+          <p>I’m also really happy for you that you got your job at Infosys and started this new chapter in Hyderabad. ❤️ You worked for it, and I’m genuinely happy seeing you move forward in life. I hope this new journey brings you lots of happiness, growth and beautiful experiences.</p>
+          <p>And honestly, we all miss you badly. 🥹❤️ Things definitely feel different when you’re not around. I really hope I can come to Hyderabad within the next month if everything works out. If possible, I definitely want to meet you. It would be really nice to sit together, talk properly, and spend some time like we used to. ❤️🫂</p>
+          <p>I’m really grateful that life gave me someone like you. I hope our bond stays the same no matter how much time passes or how much life changes.</p>
+          <p>On your birthday, I just wish that you always stay happy, peaceful and surrounded by people who genuinely care about you. You deserve so many beautiful things in life.</p>
+          <p>Happy Birthday once again, Akka ❤️🎂🫂</p>
+          <p>Thank you for being a sister to me, even though we aren’t related by blood. That bond means more to me than I can properly explain. ❤️</p>
+          <p class="highlight-text">Once again, happiest birthday, Akka. Take care and keep smiling always. ❤️</p>
+        </div>
+        <div class="card-footer">
+          <div class="closing-signature">Always with lots of love,<br><strong>Chaithanya ♡</strong></div>
+          <span class="card-heart" aria-hidden="true">♡</span>
+        </div>
+      </article>
+
+      <article class="friend-card" data-friend="Surya Narayana" hidden>
+        <div class="card-header">
+          <span class="note-seal" aria-hidden="true">S</span>
+          <div class="card-header-text">
+            <span class="closing-note-label">SPECIALLY FROM SURYA NARAYANA ♡</span>
+            <span class="card-relation">Like a Brother</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <h3>Dear Akka! 😊</h3>
+          <p>Chala antey chala thanks akka, naku baga parichayame ayina first person e office lo. First time rakhi kattinappudu I felt so happy, inka dhachukunna ah rakhi…</p>
+          <p>And meku award ichina first time, meru entha happy gha feel ayyaro — nenu dhanikanna chala happy gha feel ayya akka 😊. Always feels like my very own sister.</p>
+          <p>Mi bday Oct 5 akka, ah roju kuda bale anipinchindi. Meku gurthundi anukunta — andharu cake thisi naku rasesaru moham medha. Ah moment kuda naku best moment akka, naku like ma akka bday annattu feel ayyanu 😋.</p>
+          <p>Meru naku ichey importance, everything makes me feel so happy akka. Naku telusi meru kuda nannu own brother la ney anukuntaru akka… prathidhi chepparu, okka mi salary thappa 🤣.</p>
+          <p>Sorry akka mi bday ki ralekapothunna dhuram valla… but mi pelli ki first dance natho ney start avuthundi. Mi thammudu kuda antha enjoy cheyademo 😎.</p>
+          <p>Emo akka, ila cheppukuntu pothey lots of memories… notice period last days lo kuda bale navvukunnam, adukunnam. Ila vuntey bagunnu anipinchina rojulu vunnai, but konni thappav akka — everyone needs to be separated at one point of time, but memories stays forever and ever.</p>
+          <p class="highlight-text">Thank you so much akka, intha baga meru nannu receive chesukunnandhuku mi life lo ki 😇. Missing you akka 🥲</p>
+        </div>
+        <div class="card-footer">
+          <div class="closing-signature">With all love,<br><strong>Lokesh Surya Narayana ♡</strong></div>
+          <span class="card-heart" aria-hidden="true">♡</span>
+        </div>
+      </article>
+
+      <article class="friend-card" data-friend="Vyshnavi Sindhu" hidden>
+        <div class="card-header">
+          <span class="note-seal" aria-hidden="true">V</span>
+          <div class="card-header-text">
+            <span class="closing-note-label">SPECIALLY FROM VYSHNAVI SINDHU ♡</span>
+            <span class="card-relation">College &amp; Work</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <h3>Dear Praggu,</h3>
+          <p>You are not just my senior in college, but also my senior at the company. I really enjoy the time we spend travelling together by bus and chatting about different things.</p>
+          <p>You are such a kind and caring person, and you have a very soft heart. I feel really comfortable talking to you, and I'm happy that I got to know you both in college and at work. ❤️</p>
+        </div>
+        <div class="card-footer">
+          <div class="closing-signature">Your regards,<br><strong>Vyshnavi Sindhu</strong></div>
+          <span class="card-heart" aria-hidden="true">♡</span>
+        </div>
+      </article>
+
+      <article class="friend-card" data-friend="Sindhu" hidden>
+        <div class="card-header">
+          <span class="note-seal" aria-hidden="true">S</span>
+          <div class="card-header-text">
+            <span class="closing-note-label">SPECIALLY FROM SINDHU ♡</span>
+            <span class="card-relation">Junior &amp; Beloved Friend</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <h3>Happy Birthday, akka! 🥰</h3>
+          <p>You're one of the best people I've met in my life 💕. Meeru chala sweetheart ❤️. Anni situations ni cool and calm ga chala baga handle chestharu, annitini positive ga theesukuntaru. Mee daggara nunchi chala nerchukunnanu, akka.</p>
+          <p>Mee tho gadipina aa last moments chala bagunnayi 🤗. Meeru unna time lo mee jokes tho chala enjoy chesanu. Kaani ippudu mimmalni, mee guidance ni, meeru ichina support ni chala miss avuthunnanu, akka 🫂🫂.</p>
+          <p>Nannu okkadanini chesi vellipoyaru… naa pakkana mee place alane undi. Ayina, meeru eppudu happy ga undalani korukuntunnanu, akka. Ekkada unna mee best ivvandi 😇.</p>
+          <p class="highlight-text">Once again, Happy Birthday, akka! 🥰</p>
+        </div>
+        <div class="card-footer">
+          <div class="closing-signature">From,<br><strong>Sindhu ♡</strong></div>
+          <span class="card-heart" aria-hidden="true">♡</span>
+        </div>
+      </article>
+
+      <article class="friend-card" data-friend="Sudheer" hidden>
+        <div class="card-header">
+          <span class="note-seal" aria-hidden="true">S</span>
+          <div class="card-header-text">
+            <span class="closing-note-label">SPECIALLY FROM SUDHEER ♡</span>
+            <span class="card-relation">Friend &amp; Colleague</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <h3>Happy Birthday, Pragnaaa Garu! ❤️🎂🥳</h3>
+          <p>Honestly, you're much more than just a senior to me. Somewhere along the way, you became a really good friend and someone I genuinely feel comfortable talking to. Your kindness, caring nature, and the way you always make people feel comfortable are things I really appreciate about you.</p>
+          <p>I'm truly grateful for all the little conversations, laughs, advice, and memories we've shared. Having someone like you around makes the workplace feel a little more special. ❤️</p>
+          <p>I hope this new year of your life brings you endless happiness, peace, success, and everything your heart wishes for. Always keep smiling and stay the wonderful person you are. 🥰✨</p>
+          <p class="highlight-text">Happy Birthday once again, Pragnaaa Garu! 🎉❤️</p>
+        </div>
+        <div class="card-footer">
+          <div class="closing-signature">From,<br><strong>Sudheer</strong></div>
+          <span class="card-heart" aria-hidden="true">♡</span>
+        </div>
+      </article>
+
+      <article class="friend-card" data-friend="DP" hidden>
+        <div class="card-header">
+          <span class="note-seal" aria-hidden="true">D</span>
+          <div class="card-header-text">
+            <span class="closing-note-label">SPECIALLY FROM DP ♡</span>
+            <span class="card-relation">A True Friend</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <h3>Happy Birthday, Praggu! 🎂</h3>
+          <p>If there's one thing everyone notices about you, it's your cool and calm nature. No matter how stressful or chaotic things get, you always handle everything with such grace and composure — and honestly, that's something really rare and admirable.</p>
+          <p>And then there's your friendly nature. You make everyone around you feel so comfortable and welcome. Whether it's someone you've known for years or someone you just met, you treat everyone with the same warmth and kindness. That's a beautiful quality, Praggu.</p>
+          <p>People like you make the world a better place — just by being who you are. Your calmness gives strength to others, your friendliness brings smiles, and your presence makes every moment a little brighter.</p>
+          <p class="highlight-text">Never change who you are. Keep being the cool, calm, and wonderfully friendly person we all love. Happy Birthday! 🎉♡</p>
+        </div>
+        <div class="card-footer">
+          <div class="closing-signature">With love,<br><strong>DP ♡</strong></div>
+          <span class="card-heart" aria-hidden="true">♡</span>
+        </div>
+      </article>
+
+      <article class="friend-card" data-friend="Lakshmi Narayana" hidden>
+        <div class="card-header">
+          <span class="note-seal" aria-hidden="true">L</span>
+          <div class="card-header-text">
+            <span class="closing-note-label">SPECIALLY FROM LAKSHMI NARAYANA ♡</span>
+            <span class="card-relation">Teammate &amp; Friend</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <h3>Happy Birthday, Pragna akka! 🎂</h3>
+          <p>As a teammate, you're dedicated and positive, and as a friend, you're genuinely a lovely person to have around. 😊</p>
+          <p>Keep smiling, keep shining, and keep being the wonderful person you are.</p>
+          <p class="highlight-text">Wishing you lots of happiness, success &amp; beautiful moments ahead! 🥳</p>
+        </div>
+        <div class="card-footer">
+          <div class="closing-signature">With warm wishes,<br><strong>Lakshmi Narayana ♡</strong></div>
+          <span class="card-heart" aria-hidden="true">♡</span>
+        </div>
+      </article>
+
+      <article class="friend-card" data-friend="Shanmukha" hidden>
+        <div class="card-header">
+          <span class="note-seal" aria-hidden="true">S</span>
+          <div class="card-header-text">
+            <span class="closing-note-label">SPECIALLY FROM SHANMUKHA ♡</span>
+            <span class="card-relation">Mentor &amp; Dear Akka</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <h3>Dear Akka, 🎂✨</h3>
+          <p>Thank you for being my mentor and guiding me. You will never guess how much I respect and how much I miss your guidance and our silly little chats.</p>
+          <p>You are and will always be one of my favourite "akka"s — still haven't forgiven you for hiding that job thing from meee :/ 😄</p>
+          <p class="highlight-text">Enjoy your new journey, and I will pray from the bottom of my heart that you will get what you want! 🥳❤️</p>
+        </div>
+        <div class="card-footer">
+          <div class="closing-signature">With lots of respect &amp; love,<br><strong>Shanmukha ♡</strong></div>
+          <span class="card-heart" aria-hidden="true">♡</span>
+        </div>
+      </article>
+
+      <article class="friend-card" data-friend="Charan" hidden>
+        <div class="card-header">
+          <span class="note-seal" aria-hidden="true">C</span>
+          <div class="card-header-text">
+            <span class="closing-note-label">SPECIALLY FROM CHARAN ♡</span>
+            <span class="card-relation">Ur Thambi &amp; Colleague</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <h3>Hi akka! 🎂</h3>
+          <p>Many Many Puttina Roju Subakankshalu! 🎉 You are one of the persons that I learnt many things from and managed to survive in my first company for this long.</p>
+          <p>Thank You for all the guidance and Help. Hope you will achieve Greater heights in life!</p>
+          <p class="highlight-text">Keep smiling and Keep shining as always! ✨</p>
+        </div>
+        <div class="card-footer">
+          <div class="closing-signature">With lots of lovvu 🫶,<br><strong>From ur thambi Charan ♡</strong></div>
+          <span class="card-heart" aria-hidden="true">♡</span>
+        </div>
+      </article>
+
+      <article class="friend-card" data-friend="Rupesh" hidden>
+        <div class="card-header">
+          <span class="note-seal" aria-hidden="true">R</span>
+          <div class="card-header-text">
+            <span class="closing-note-label">SPECIALLY FROM RUPESH ♡</span>
+            <span class="card-relation">Colleague &amp; Teammate</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <h3>Hi akka! 🎂</h3>
+          <p>Wish you many more happy returns of the day akka! Meetho kalisi pani chesa — mee dedication ki mee perfection ki take a bow! 🙌</p>
+          <p>And meeru kastapadadaniki meeku kachithamga deserved position ki veltaru. Chala nerchukunnam mee daggara. Meeru ilane happy ga andariki help chestaru ani anukuntunnanu.</p>
+          <p class="highlight-text">Finally, once again wish you many more happy returns of the day akka! ✨☺️</p>
+        </div>
+        <div class="card-footer">
+          <div class="closing-signature">With best regards,<br><strong>From Rupesh ♡</strong></div>
+          <span class="card-heart" aria-hidden="true">♡</span>
+        </div>
+      </article>
+
+      <article class="friend-card" data-friend="Bhanu" hidden>
+        <div class="card-header">
+          <span class="note-seal" aria-hidden="true">B</span>
+          <div class="card-header-text">
+            <span class="closing-note-label">SPECIALLY FROM BHANU ♡</span>
+            <span class="card-relation">BIXO Teammate &amp; Brother</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <h3>Happiest Birthday, Akka! 🥳😍</h3>
+          <p>Akka mana bond ella start ayindhi gurthu undhaa… BIXO… Performance Management… Nenu meetho first matladindhe appude akka. Alla start ayyi problems, relationships, feelings ella enno discuss chesam akka…</p>
+          <p>And the last 3 months we enjoyed a lot akka, with lot of jokes, funny moments, and going for restaurants and finally Turf! And you are the best Team Lead of BIXO… kani meeru ekkuva tension theesukunaru akka.</p>
+          <p>And mee last days lo andharikanna naathone ekkuva unnaru akka… OFC lo mana discussion about everything and manam snacks kosam cheese fights etc. 😋</p>
+          <p>Akka meeru pakkana leni appati nunchi evaru matladat ledhu natho… nenu okkade untuna akka. Meeru leni lotu chala thelusthundhi akka. I miss our conversations and funny talks akka… 😢😞</p>
+          <p>And meeru ekkada unna mana bond ilage undali ani korukuntunna akka. And one thing akka — meeru nenu adigindhi chesi ivvaledhu akka… Nenu Uggani adiganu akka meeru chesi ivvaledhu… chesi istha annaru but chesi ivvaledhu 😞😢</p>
+          <p class="highlight-text">Finally thanks for the party akka 🥳🎂. I miss you akka…</p>
+        </div>
+        <div class="card-footer">
+          <div class="closing-signature">With lots of love &amp; memories,<br><strong>From Bhanu ♡</strong></div>
+          <span class="card-heart" aria-hidden="true">♡</span>
+        </div>
+      </article>
+
+      <article class="friend-card" data-friend="Keerthivash" hidden>
+        <div class="card-header">
+          <span class="note-seal" aria-hidden="true">K</span>
+          <div class="card-header-text">
+            <span class="closing-note-label">SPECIALLY FROM KEERTHIVASH ♡</span>
+            <span class="card-relation">Colleague &amp; Friend</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <h3>Happy Birthday, Pragna! 🎂✨</h3>
+          <p>As far as I know, you are a person who mingles so easily with everyone around you. No matter who it is, you make people feel welcomed, included, and comfortable right away.</p>
+          <p>What I really admire about you is that you are so mature for your age. You look at situations with clarity and handle things in such a thoughtful and balanced way — always finding a better perspective and keeping things positive.</p>
+          <p class="highlight-text">May this year bring you abundant happiness, growth, and all the success you truly deserve! Keep shining always! 🎉✨</p>
+        </div>
+        <div class="card-footer">
+          <div class="closing-signature">With best wishes &amp; regards,<br><strong>Keerthivash ♡</strong></div>
+          <span class="card-heart" aria-hidden="true">♡</span>
+        </div>
+      </article>
+
+      <article class="friend-card" data-friend="Hemanth" hidden>
+        <div class="card-header">
+          <span class="note-seal" aria-hidden="true">H</span>
+          <div class="card-header-text">
+            <span class="closing-note-label">SPECIALLY FROM HEMANTH ♡</span>
+            <span class="card-relation">Dearest Friend</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <h3>Hii Praggu,</h3>
+          <p>My Dearest Friend, so sweet of you! When it comes to maturity, intelligence, and positive thinking, your name is the first name I remember.</p>
+          <p>The meaning of Pragna itself is wisdom, intelligence, and intellectual, which is so apt for you. Always be happy wherever you go and whatever you achieve.</p>
+          <p>It is the time to celebrate your birthday! 🎂🎉</p>
+          <p class="highlight-text">Many More Happy Returns of the Day, My dear friend! ✨❤️</p>
+        </div>
+        <div class="card-footer">
+          <div class="closing-signature">With all my best wishes,<br><strong>From Hemanth ♡</strong></div>
+          <span class="card-heart" aria-hidden="true">♡</span>
+        </div>
+      </article>
+
+      <article class="friend-card" data-friend="Abdul" hidden>
+        <div class="card-header">
+          <span class="note-seal" aria-hidden="true">A</span>
+          <div class="card-header-text">
+            <span class="closing-note-label">SPECIALLY FROM ABDUL ♡</span>
+            <span class="card-relation">Good Friend</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <h3>Hi Praggu,</h3>
+          <p>You sound silent, but your presence makes a big impact on the time that you spend with us. First I thought you are a red flag, but slowly you painted green on that 💚</p>
+          <p>You help people, you care for people, you try to bring things to get easier, and so kind with a childish and innocent heart. You keep our environment together.</p>
+          <p>Thanks for being a part of our journey — I mean the people whom you want to be with you. And I want you to be always with that one person. You both look beautiful. ❤️</p>
+          <p>I wish you all the best and good luck further and keep smiling, take care of your health and all. If you are in any situation in future, please contact — we all people are with you to sort it out.</p>
+          <p class="highlight-text">Wishing you a very Happy Birthday! 🎉✨</p>
+        </div>
+        <div class="card-footer">
+          <div class="closing-signature">With warm regards &amp; wishes,<br><strong>From Abdul ♡</strong></div>
+          <span class="card-heart" aria-hidden="true">♡</span>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- ✧ Bottom Navigation ✧ -->
+    <nav class="friend-note-nav" aria-label="Messages from friends">
+      <button id="previous-note" class="secondary" disabled aria-label="Previous friend message">← Prev</button>
+      <span id="note-position" role="status">Sowmya ♡</span>
+      <button id="next-note" aria-label="Next friend message">Next →</button>
+    </nav>
+
+    <!-- ✧ Beautiful Closing Section ✧ -->
+    <div class="gift-closing">
+      <div class="gift-closing-decoration" aria-hidden="true">
+        <span>✧</span><span>♡</span><span>✦</span>
+      </div>
+      <p class="gift-closing-text">Made with a little magic &amp; a lot of love</p>
+      <span class="gift-closing-from">FROM YOUR FAMILY AND FRIENDS</span>
+    </div>
+
+  </div>
+
+  <button id="gift-replay" class="secondary">Experience it again ↺</button>
+</section>
+
+</main>
+<footer><span>FOR PRAGNA, WITH LOVE</span><span>♡</span><span>A SURPRISE WORTH A SMILE</span></footer>
+</body></html>
