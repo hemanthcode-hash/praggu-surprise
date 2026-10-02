@@ -4,14 +4,24 @@ const path = require('node:path');
 const root = path.join(__dirname, 'dist');
 const types = {'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.jpeg':'image/jpeg','.jpg':'image/jpeg','.mp4':'video/mp4'};
 
-// Ensure uploaded photo is synced into dist/
-const uploadedSrc = 'C:/Users/Hemanth Pelluru/.gemini/antigravity/brain/e994a276-962b-4bbe-ac65-e1d556465630/.user_uploaded/media_1790878102678.jpg';
-const destImg = path.join(root, 'memory-new-year.jpeg');
-try {
-  if (fs.existsSync(uploadedSrc) && !fs.existsSync(destImg)) {
-    fs.copyFileSync(uploadedSrc, destImg);
+// Ensure uploaded photos are synced into dist/
+const uploads = [
+  {
+    src: 'C:/Users/Hemanth Pelluru/.gemini/antigravity/brain/e994a276-962b-4bbe-ac65-e1d556465630/.user_uploaded/media_1790878102678.jpg',
+    dest: path.join(root, 'memory-new-year.jpeg')
+  },
+  {
+    src: 'C:/Users/Hemanth Pelluru/.gemini/antigravity/brain/e994a276-962b-4bbe-ac65-e1d556465630/.user_uploaded/media_1790960959674.jpg',
+    dest: path.join(root, 'memory-celebration.jpeg')
   }
-} catch (e) {}
+];
+uploads.forEach(u => {
+  try {
+    if (fs.existsSync(u.src) && !fs.existsSync(u.dest)) {
+      fs.copyFileSync(u.src, u.dest);
+    }
+  } catch (e) {}
+});
 
 http.createServer((req,res)=>{
   const pathname = new URL(req.url,'http://localhost').pathname;
