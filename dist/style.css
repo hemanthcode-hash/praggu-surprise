@@ -282,21 +282,21 @@ body[data-screen="final-gift"] header,body[data-screen="final-gift"] footer{disp
 
 /* Alternating photo-and-message story rows. */
 .photo-gallery{display:flex;flex-direction:column;max-width:1060px;gap:65px;margin:45px auto;padding:12px 20px}
-.photo-gallery figure,.photo-gallery figure:nth-child(2n),.photo-gallery .gallery-video{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:48px;width:100%;padding:0;transform:none;background:transparent;box-shadow:none}
+.photo-gallery figure,.photo-gallery figure:nth-child(2n),.photo-gallery .gallery-video{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:48px;width:100%;padding:0;transform:none;background:transparent;box-shadow:none;content-visibility:auto;contain-intrinsic-size:500px 550px}
 .photo-gallery figure:nth-child(even)>img,.photo-gallery figure:nth-child(even)>video{grid-column:2;grid-row:1}
 .photo-gallery figure:nth-child(even)>figcaption{grid-column:1;grid-row:1}
-.photo-gallery img,.photo-gallery video{width:100%;height:auto;aspect-ratio:auto;max-height:620px;object-fit:contain;background:#fffdf7;padding:10px;border:1px solid #eadbd0;box-shadow:0 12px 35px #713b4514;border-radius:3px}
+.photo-gallery img,.photo-gallery video{width:100%;height:auto;aspect-ratio:auto;max-height:620px;object-fit:contain;background:#fffdf7;padding:10px;border:1px solid #eadbd0;box-shadow:0 12px 35px #713b4514;border-radius:3px;image-rendering:-webkit-optimize-contrast}
 .photo-gallery figcaption{padding:20px 0;text-align:left;text-wrap:initial}
 .memory-number{font:500 10px/1.6 'DM Sans',sans-serif;letter-spacing:2px;color:#a37f83}
 .photo-gallery figcaption h3{font:400 clamp(30px,3.3vw,44px)/1.12 'Cormorant Garamond',Georgia,serif;color:#783b51;margin:18px 0}
 .photo-gallery figcaption p{font:400 16px/1.9 'DM Sans',sans-serif;color:#896b73;margin:0;max-width:420px}
 .memory-heart{display:block;color:#b98294;font-size:29px;margin-top:20px}
-@media(max-width:760px){.photo-gallery{gap:40px;max-width:480px;padding:0 6px}.photo-gallery figure,.photo-gallery figure:nth-child(2n),.photo-gallery .gallery-video{grid-template-columns:1fr;gap:4px}.photo-gallery figure:nth-child(even)>img,.photo-gallery figure:nth-child(even)>video,.photo-gallery figure:nth-child(even)>figcaption{grid-column:auto;grid-row:auto}.photo-gallery figcaption{padding:20px 8px}.photo-gallery figcaption h3{font-size:32px;margin:12px 0}.photo-gallery figcaption p{font-size:15px}.memory-heart{margin-top:12px}}
+@media(max-width:760px){.photo-gallery{gap:40px;max-width:480px;padding:0 6px}.photo-gallery figure,.photo-gallery figure:nth-child(2n),.photo-gallery .gallery-video{grid-template-columns:1fr;gap:4px;contain-intrinsic-size:360px 480px}.photo-gallery figure:nth-child(even)>img,.photo-gallery figure:nth-child(even)>video,.photo-gallery figure:nth-child(even)>figcaption{grid-column:auto;grid-row:auto}.photo-gallery figcaption{padding:20px 8px}.photo-gallery figcaption h3{font-size:32px;margin:12px 0}.photo-gallery figcaption p{font-size:15px}.memory-heart{margin-top:12px}}
 /* Scrapbook-style photos without cropping the original images. */
 .photo-gallery figure{position:relative;isolation:isolate;--photo-tilt:-3deg}
 .photo-gallery figure:nth-child(even){--photo-tilt:3deg}
 .photo-gallery figure:nth-child(3n){--photo-tilt:-1.5deg}
-.photo-gallery figure>img{position:relative;border:0;border-radius:3px;padding:13px 13px 38px;background:#fffdf7;transform:rotate(var(--photo-tilt));box-shadow:0 18px 35px #61354625,0 2px 5px #61354615;transition:transform .35s ease,box-shadow .35s ease}
+.photo-gallery figure>img{position:relative;border:0;border-radius:3px;padding:13px 13px 38px;background:radial-gradient(circle at center,#fffaf3 30%,#f5e5e8 100%);transform:rotate(var(--photo-tilt));box-shadow:0 18px 35px #61354625,0 2px 5px #61354615;transition:transform .35s ease,box-shadow .35s ease}
 .photo-gallery figure>img:hover{transform:rotate(0deg) translateY(-5px);box-shadow:0 23px 42px #61354630}
 .photo-gallery figure:not(.gallery-video)::before{content:'';position:absolute;z-index:2;pointer-events:none;top:-10px;left:calc(25% - 54px);width:90px;height:30px;background:repeating-linear-gradient(90deg,#dfc2a7b8 0 4px,#e6cfb7b8 4px 7px);border-left:2px dashed #fff8e9aa;border-right:2px dashed #fff8e9aa;transform:rotate(-9deg);box-shadow:0 2px 3px #7153410c}
 .photo-gallery figure:nth-child(even):not(.gallery-video)::before{left:calc(75% - 36px);transform:rotate(10deg)}

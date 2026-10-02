@@ -28,6 +28,7 @@ function show(id) {
   document.body.classList.remove('envelope-visible');
   screens.forEach(screen => { screen.hidden = screen.id !== id; });
   document.body.dataset.screen = id;
+  try { localStorage.setItem('praggu_current_screen', id); } catch(e){}
   window.scrollTo({top:0, behavior:'instant'});
   const heading = document.querySelector(`#${id} h2`);
   if (heading) { heading.setAttribute('tabindex','-1'); heading.focus({preventScroll:true}); }
@@ -204,6 +205,7 @@ document.getElementById('replay').addEventListener('click',()=>{
   timers.forEach(clearTimeout); timers=[];
   typewriterActive = false;
   resetPinScreen();
+  try { localStorage.removeItem('praggu_current_screen'); } catch(e){}
   const paper = document.querySelector('.letter-paper');
   if (paper && paper.dataset.originalHtml) paper.innerHTML = paper.dataset.originalHtml;
   document.getElementById('letter-invite').classList.remove('reading');
@@ -258,6 +260,82 @@ document.getElementById('welcome').prepend(landingBalloons);
 const cakeCanvas=document.getElementById('birthday-cake');
 const cakeContext=cakeCanvas.getContext('2d');
 let cakeCuts=[], cakeStart=null, cakePointer=null, cakeFinished=false, giftTransitionTimer=null;
+function drawCandle(c) {
+ c.save();
+ c.fillStyle='rgba(84,42,57,0.22)';
+ c.beginPath();
+ c.ellipse(300,292,14,6,0,0,Math.PI*2);
+ c.fill();
+ const candleW=14,candleH=54;
+ const candleX=300-candleW/2,candleY=290-candleH;
+ const candleGrad=c.createLinearGradient(candleX,candleY,candleX+candleW,candleY);
+ candleGrad.addColorStop(0,'#fde2e7');
+ candleGrad.addColorStop(0.3,'#ffffff');
+ candleGrad.addColorStop(0.7,'#f8b4c4');
+ candleGrad.addColorStop(1,'#e0627e');
+ c.fillStyle=candleGrad;
+ c.beginPath();
+ if(c.roundRect) c.roundRect(candleX,candleY,candleW,candleH,[3,3,2,2]);
+ else c.rect(candleX,candleY,candleW,candleH);
+ c.fill();
+ c.save();
+ c.beginPath();
+ c.rect(candleX,candleY,candleW,candleH);
+ c.clip();
+ c.strokeStyle='#c44569';
+ c.lineWidth=3.5;
+ for(let i=-10;i<candleH+15;i+=13){
+  c.beginPath();
+  c.moveTo(candleX-2,candleY+i);
+  c.lineTo(candleX+candleW+2,candleY+i+9);
+  c.stroke();
+ }
+ c.restore();
+ c.fillStyle='#f8bbd0';
+ c.beginPath();
+ c.ellipse(300,candleY,candleW/2,3,0,0,Math.PI*2);
+ c.fill();
+ c.strokeStyle='#3e2723';
+ c.lineWidth=2.5;
+ c.lineCap='round';
+ c.beginPath();
+ c.moveTo(300,candleY);
+ c.lineTo(300,candleY-9);
+ c.stroke();
+ const flameGlow=c.createRadialGradient(300,candleY-24,2,300,candleY-24,38);
+ flameGlow.addColorStop(0,'rgba(255,230,130,0.9)');
+ flameGlow.addColorStop(0.35,'rgba(255,160,60,0.45)');
+ flameGlow.addColorStop(0.7,'rgba(255,100,40,0.15)');
+ flameGlow.addColorStop(1,'rgba(255,80,20,0)');
+ c.fillStyle=flameGlow;
+ c.beginPath();
+ c.arc(300,candleY-24,38,0,Math.PI*2);
+ c.fill();
+ c.fillStyle='#ff793f';
+ c.beginPath();
+ c.moveTo(300,candleY-40);
+ c.bezierCurveTo(291,candleY-30,290,candleY-12,300,candleY-9);
+ c.bezierCurveTo(310,candleY-12,309,candleY-30,300,candleY-40);
+ c.fill();
+ c.fillStyle='#ffb142';
+ c.beginPath();
+ c.moveTo(300,candleY-34);
+ c.bezierCurveTo(294,candleY-26,293,candleY-13,300,candleY-10);
+ c.bezierCurveTo(307,candleY-13,306,candleY-26,300,candleY-34);
+ c.fill();
+ c.fillStyle='#fffde7';
+ c.beginPath();
+ c.moveTo(300,candleY-26);
+ c.bezierCurveTo(296,candleY-20,295,candleY-13,300,candleY-11);
+ c.bezierCurveTo(305,candleY-13,304,candleY-20,300,candleY-26);
+ c.fill();
+ c.fillStyle='#ffffff';
+ c.beginPath();
+ c.arc(300,candleY-20,1.8,0,Math.PI*2);
+ c.fill();
+ c.restore();
+}
+
 function drawBirthdayCake(preview) {
  const c=cakeContext;c.clearRect(0,0,600,600);
  c.save();c.shadowColor='#76594125';c.shadowBlur=30;c.shadowOffsetY=12;
@@ -270,6 +348,7 @@ function drawBirthdayCake(preview) {
  for(const cut of cakeCuts){c.lineCap='round';c.strokeStyle='#a56b46';c.lineWidth=14;c.beginPath();c.moveTo(...cut[0]);c.lineTo(...cut[1]);c.stroke();c.strokeStyle='#fff5df';c.lineWidth=3;c.stroke();}
  if(preview&&cakeStart){c.strokeStyle='#fffdf6';c.lineWidth=3;c.setLineDash([8,6]);c.beginPath();c.moveTo(...cakeStart);c.lineTo(...preview);c.stroke();}
  c.restore();
+ drawCandle(c);
 }
 function cutBirthdayCake(from,to){
  if(cakeFinished)return;
@@ -343,3 +422,23 @@ function setFriendNote(index,focus=true){
 }
 document.getElementById('previous-note').addEventListener('click',()=>setFriendNote(friendNoteIndex-1));
 document.getElementById('next-note').addEventListener('click',()=>setFriendNote(friendNoteIndex+1));
+
+function restoreSavedScreen() {
+  try {
+    const saved = localStorage.getItem('praggu_current_screen');
+    if (saved && saved !== 'welcome' && document.getElementById(saved)) {
+      show(saved);
+      if (saved === 'wish') {
+        document.getElementById('letter-invite').hidden = false;
+        document.body.classList.add('envelope-visible');
+      } else if (saved === 'cake-screen') {
+        drawBirthdayCake();
+      } else if (saved === 'final-gift') {
+        document.getElementById('final-gift').classList.add('note-visible');
+        document.getElementById('gift-reveal').hidden = false;
+        setFriendNote(0, false);
+      }
+    }
+  } catch(e){}
+}
+restoreSavedScreen();
