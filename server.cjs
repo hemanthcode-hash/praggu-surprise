@@ -27,5 +27,19 @@ http.createServer((req,res)=>{
   const pathname = new URL(req.url,'http://localhost').pathname;
   const file = path.resolve(root, '.' + (pathname==='/'?'/index.html':decodeURIComponent(pathname)));
   if(!file.startsWith(root+path.sep)){res.writeHead(403);return res.end();}
-  fs.readFile(file,(error,data)=>{if(error){res.writeHead(404);return res.end('Not found');}res.writeHead(200,{'Content-Type':types[path.extname(file)]||'application/octet-stream'});res.end(data);});
+  fs.readFile(file,(error,data)=>{
+    if(error){
+      const filename = path.basename(file);
+      const match = uploads.find(u => path.basename(u.dest) === filename);
+      if (match && fs.existsSync(match.src)) {
+        try { fs.copyFileSync(match.src, file); } catch(e){}
+        const imgData = fs.readFileSync(match.src);
+        res.writeHead(200,{'Content-Type':types[path.extname(file)]||'image/jpeg'});
+        return res.end(imgData);
+      }
+      res.writeHead(404);return res.end('Not found');
+    }
+    res.writeHead(200,{'Content-Type':types[path.extname(file)]||'application/octet-stream'});
+    res.end(data);
+  });
 }).listen(4173,'127.0.0.1',()=>console.log('Birthday surprise running at http://localhost:4173'));
