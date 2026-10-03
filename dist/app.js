@@ -50,6 +50,26 @@ document.getElementById('entry-form').addEventListener('submit', event => {
     input.setAttribute('aria-invalid','true'); input.focus(); return;
   }
   document.getElementById('error').textContent=''; input.removeAttribute('aria-invalid');
+  const envelope = document.getElementById('open-letter');
+  if (envelope) {
+    envelope.hidden = false;
+    envelope.style.display = '';
+    envelope.disabled = false;
+    envelope.classList.remove('opening');
+  }
+  const hint = document.querySelector('.envelope-hint');
+  if (hint) {
+    hint.hidden = false;
+    hint.style.display = '';
+  }
+  const invite = document.getElementById('letter-invite');
+  if (invite) {
+    invite.classList.remove('reading');
+  }
+  const openedLetter = document.getElementById('opened-letter');
+  if (openedLetter) {
+    openedLetter.hidden = true;
+  }
   show('wish');
   celebrate();
   timers.push(setTimeout(()=>{document.getElementById('letter-invite').hidden=false;document.body.classList.add('envelope-visible');document.getElementById('open-letter').focus({preventScroll:true});},1000));
@@ -148,10 +168,17 @@ document.getElementById('open-letter').addEventListener('click',()=>{
   const envelope = document.getElementById('open-letter');
   envelope.disabled = true;
   envelope.classList.add('opening');
-  const delay = matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 600;
+  const delay = matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 500;
   timers.push(setTimeout(()=>{
     const invite = document.getElementById('letter-invite');
     invite.classList.add('reading');
+    envelope.hidden = true;
+    envelope.style.display = 'none';
+    const hint = document.querySelector('.envelope-hint');
+    if (hint) {
+      hint.hidden = true;
+      hint.style.display = 'none';
+    }
     document.getElementById('opened-letter').hidden = false;
     letterScroll.scrollTop = 0; scrollPosition = 0; lastScrollTime = 0;
     setScrollPaused(true);
@@ -209,36 +236,22 @@ document.getElementById('replay').addEventListener('click',()=>{
   if (paper && paper.dataset.originalHtml) paper.innerHTML = paper.dataset.originalHtml;
   document.getElementById('letter-invite').classList.remove('reading');
   document.getElementById('opened-letter').hidden=true;
-  document.getElementById('open-letter').classList.remove('opening');
-  document.getElementById('open-letter').disabled=false;
+  const envelope = document.getElementById('open-letter');
+  if (envelope) {
+    envelope.hidden = false;
+    envelope.style.display = '';
+    envelope.classList.remove('opening');
+    envelope.disabled = false;
+  }
+  const hint = document.querySelector('.envelope-hint');
+  if (hint) {
+    hint.hidden = false;
+    hint.style.display = '';
+  }
   document.getElementById('letter-invite').hidden=true;
   document.getElementById('confetti').replaceChildren();
   show('welcome'); document.getElementById('name').focus();
 });
-
-// Decorative birthday motion stays behind the reading surface.
-function addBirthdayBackground(parent) {
-  const background=document.createElement('div');
-  background.className='birthday-background';
-  background.setAttribute('aria-hidden','true');
-  const symbols=['🎈','✦','🎉','✧','🎈','✦','🎁','✧'];
-  for(let i=0;i<16;i++) {
-    const item=document.createElement('span');
-    item.className='birthday-float';
-    item.textContent=symbols[i%symbols.length];
-    const side=i%2===0;
-    item.style.cssText='left:'+(side ? 2+(i%4)*4 : 84+(i%4)*3)+'%;--duration:'+(15+i%5*3)+'s;--delay:-'+(i*2.7)+'s;--sway:'+(side?25:-25)+'px;font-size:'+(i%4===0?42:24)+'px';
-    background.append(item);
-  }
-  for(let i=0;i<24;i++) {
-    const item=document.createElement('i');
-    item.className='birthday-confetti';
-    item.style.cssText='left:'+((i*37)%100)+'%;--duration:'+(12+i%7*2)+'s;--delay:-'+(i*1.9)+'s;background:'+['#d4a45b','#c58098','#e5b2ba'][i%3];
-    background.append(item);
-  }
-  parent.prepend(background);
-}
-addBirthdayBackground(document.getElementById('letter-invite'));
 
 // Repeating decorative balloon pops around the secret card.
 const landingBalloons = document.createElement('div');
