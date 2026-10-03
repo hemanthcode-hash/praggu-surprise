@@ -28,7 +28,6 @@ function show(id) {
   document.body.classList.remove('envelope-visible');
   screens.forEach(screen => { screen.hidden = screen.id !== id; });
   document.body.dataset.screen = id;
-  try { localStorage.setItem('praggu_current_screen', id); } catch(e){}
   window.scrollTo({top:0, behavior:'instant'});
   const heading = document.querySelector(`#${id} h2`);
   if (heading) { heading.setAttribute('tabindex','-1'); heading.focus({preventScroll:true}); }
@@ -423,22 +422,6 @@ function setFriendNote(index,focus=true){
 document.getElementById('previous-note').addEventListener('click',()=>setFriendNote(friendNoteIndex-1));
 document.getElementById('next-note').addEventListener('click',()=>setFriendNote(friendNoteIndex+1));
 
-function restoreSavedScreen() {
-  try {
-    const saved = localStorage.getItem('praggu_current_screen');
-    if (saved && saved !== 'welcome' && document.getElementById(saved)) {
-      show(saved);
-      if (saved === 'wish') {
-        document.getElementById('letter-invite').hidden = false;
-        document.body.classList.add('envelope-visible');
-      } else if (saved === 'cake-screen') {
-        drawBirthdayCake();
-      } else if (saved === 'final-gift') {
-        document.getElementById('final-gift').classList.add('note-visible');
-        document.getElementById('gift-reveal').hidden = false;
-        setFriendNote(0, false);
-      }
-    }
-  } catch(e){}
-}
-restoreSavedScreen();
+try {
+  localStorage.removeItem('praggu_current_screen');
+} catch(e){}
