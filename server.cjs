@@ -13,6 +13,10 @@ const uploads = [
   {
     src: 'C:/Users/Hemanth Pelluru/.gemini/antigravity/brain/e994a276-962b-4bbe-ac65-e1d556465630/.user_uploaded/media_1790960959674.jpg',
     dest: path.join(root, 'memory-celebration.jpeg')
+  },
+  {
+    src: 'C:/Users/Hemanth Pelluru/.gemini/antigravity/brain/e994a276-962b-4bbe-ac65-e1d556465630/.user_uploaded/media_1791001743544.jpg',
+    dest: path.join(root, 'memory-festival-group.jpg')
   }
 ];
 uploads.forEach(u => {
